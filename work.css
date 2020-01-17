@@ -1,0 +1,227 @@
+body{
+    margin:0;
+    font-family: 'Arya';
+    font-size: 16px;
+    color: black;
+    background-color: rgb(75, 119, 160);
+    text-decoration: none;
+}
+
+
+.line {
+    width: 40px;
+    height: 3px;
+    background-color: bisque;
+}
+
+.container .caption a{
+	text-decoration: none;
+	color: white;
+}
+/* My Nav Bar */
+
+nav{
+    background-color: transparent;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    font-family: 'Arya';
+    padding-top: 15px;
+}
+
+.logo{
+    color: bisque;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 20px;
+}
+
+.nav-links{
+    display:flex;
+    justify-content: space-around;
+    width: 30%;
+    position: relative;
+}
+
+.nav-links li{
+    list-style: none;
+}
+
+.nav-links a{
+    color:bisque;
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.burger div{
+    width: 25px;
+    height: 5px;
+    background-color: orange;
+    margin: 5px;
+}
+.burger{
+    display: none;
+    cursor: pointer;
+}
+@media screen and (max-width:1024px){
+    .nav-links{
+        width:60%; 
+    }
+}
+
+@media screen and (max-width:768px){
+    body{
+        overflow-x: hidden;
+    }
+    .nav-links{
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 8vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+    .nav-links li{
+        opacity: 0;
+    }
+    .burger{
+        display: block;
+    }
+}
+
+.nav-active{
+    transform: translateX(0%);
+}
+
+/* Responsive placing of the boxes*/
+.container {
+		padding: 1% 1% 0% 1%;
+		background: none;
+}
+.container:after {
+		content: '';
+		display: inline-block;
+		width: 100%;
+}
+
+/* Inside the box */
+
+.box {
+		width: 96%;
+		margin:2%;
+		padding-bottom: 96%;
+		height: 0;
+		position: relative;
+		float: left;
+		cursor: pointer;
+		overflow: hidden;
+        
+/*		box-shadow: 0px 3px 18px 1px #fff;*/
+		
+}
+
+.box:after {
+		content: '';
+		position: absolute;
+		background-color: #000;
+		opacity:0;
+		z-index: 55;
+		width: 100%;
+		height: 100%;
+		-webkit-transition: all .15s ease-out;
+		-moz-transition: all .15s ease-out;
+		-ms-transition: all .15s ease-out;
+		-o-transition: all .15s ease-out;
+		transition: all .15s ease-out;
+}
+
+.box:hover::after {
+		background-color: none;
+		opacity:.10;
+}
+
+.container .box .caption {
+		position: absolute;
+		z-index: 60;
+		width: 90%;
+		margin-left: 5%;
+		top: 50%;
+		-webkit-transform: scale(3);
+		-moz-transform: scale(3);
+		-ms-transform: scale(3);
+		-o-transform: scale(3);
+		transform: scale(3);
+		text-align: center;
+		-webkit-transition: all .15s ease-out;
+		-moz-transition: all .15s ease-out;
+		-ms-transition: all .15s ease-out;
+		-o-transition: all .15s ease-out;
+		transition: all .15s ease-out;
+		font-family: 'arya';
+		color: #fff;
+		opacity: 0;
+		text-decoration: #fff;
+}
+
+.box:hover .caption {
+		-webkit-transform: scale(1) translate(0%, -50%);
+		-moz-transform: scale(1) translate(0%, -50%);
+		-ms-transform: scale(1) translate(0%, -50%);
+		-o-transform: scale(1) translate(0%, -50%);
+		transform: scale(1) translate(0%, -50%);
+		opacity: 1;
+}
+
+.box img {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		height: 100%;
+		-webkit-transform: translate(-50%, -50%);
+		-moz-transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+		-o-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+		z-index: 50;
+		-webkit-transition: all .10s ease-out;
+		-moz-transition: all .10s ease-out;
+		-ms-transition: all .10s ease-out;
+		-o-transition: all .10s ease-out;
+		transition: all .10s ease-out;
+}
+
+.box:hover img {
+	height: 150%;
+}
+/* media changes, changing number of columns */
+
+@media all and (min-width: 350px){
+  .container .box{
+		width: 48%;
+		margin:1%;
+		padding-bottom:48%;
+	}
+}
+
+@media all and (min-width: 800px){
+  .container .box{
+		width: 31.3333%;
+		padding-bottom:30%;
+	}
+}
+@media all and (min-width: 1200px){
+  .container .box{
+		width: 23%;
+		padding-bottom:23%;
+	}
+}
+
+
+
